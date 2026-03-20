@@ -51,12 +51,11 @@
 
     <!-- En-tête -->
     <header class="text-center mb-10">
-      <p class="text-sm font-semibold tracking-widest text-electrique uppercase mb-2">Outil gratuit</p>
       <h1 class="text-3xl sm:text-4xl font-bold text-nuit leading-tight mb-3">
-        Combien de CA dort dans<br class="hidden sm:block" /> vos devis non signés ?
+        Combien de CA représente<br class="hidden sm:block" /> vos devis non signés ?
       </h1>
       <p class="text-slate-500 text-base max-w-lg mx-auto">
-        Renseignez vos chiffres ci-dessous et découvrez en temps réel le potentiel que vous laissez sur la table chaque année.
+        Renseignez vos chiffres ci-dessous et découvrez en temps réel le montant annuel de votre CA non converti.
       </p>
     </header>
 
@@ -68,7 +67,7 @@
 
         <!-- Input 1 : Nombre de devis -->
         <div class="flex flex-col gap-1.5">
-          <label for="nbDevis" class="text-sm font-medium text-slate-700">
+          <label for="nbDevis" class="text-sm font-medium text-slate-700 leading-tight">
             Devis envoyés / mois
           </label>
           <input
@@ -84,7 +83,7 @@
 
         <!-- Input 2 : Valeur moyenne -->
         <div class="flex flex-col gap-1.5">
-          <label for="valeurDevis" class="text-sm font-medium text-slate-700">
+          <label for="valeurDevis" class="text-sm font-medium text-slate-700 leading-tight">
             Valeur moyenne d'un devis (€)
           </label>
           <input
@@ -100,8 +99,8 @@
 
         <!-- Input 3 : Taux de signature -->
         <div class="flex flex-col gap-1.5">
-          <label for="tauxSignature" class="text-sm font-medium text-slate-700">
-            Taux de signature actuel (%)
+          <label for="tauxSignature" class="text-sm font-medium text-slate-700 leading-tight">
+            Taux de transformation (%)
           </label>
           <input
             id="tauxSignature"
@@ -119,27 +118,38 @@
 
     <!-- ===== RÉSULTAT PRINCIPAL — CA DORMANT ANNUEL ===== -->
     <section class="bg-nuit rounded-2xl p-6 sm:p-8 mb-6 text-center">
-      <p class="text-slate-400 text-sm font-medium uppercase tracking-widest mb-2">
-        Votre CA dormant annuel
+      <p class="text-white text-sm font-medium mb-3">
+        Votre chiffre d'affaires non converti annuel
       </p>
-      <p id="caDormantAnnuel" class="text-4xl sm:text-5xl font-bold text-white resultat-animate mb-2">
+      <p id="caDormantAnnuel" class="text-4xl sm:text-5xl font-bold text-white resultat-animate mb-3">
         — €
       </p>
-      <p class="text-slate-400 text-sm">
-        soit <span id="caDormantMensuel" class="text-white font-medium resultat-animate">— €</span> par mois qui restent sur la table
+      <p class="text-white text-sm">
+        Soit <span id="caDormantMensuel" class="text-white font-bold resultat-animate">— €</span> par mois qui ne sont pas signés
+      </p>
+    </section>
+
+    <!-- ===== ENCADRÉ PROSPECTS / CIBLE ===== -->
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 mb-6">
+      <p class="text-slate-700 text-base leading-relaxed">
+        Tous vos prospects ne signeront pas. Certains ne sont pas intéressés, d'autres préféreront le concurrent.<br /><br />
+        Mais il y a aussi les curieux, les indécis, ceux qui comparent...
+      </p>
+      <p class="text-nuit font-semibold text-base mt-4">
+        C'est cette cible qui a besoin d'être relancée.
       </p>
     </section>
 
     <!-- ===== TABLEAU COMPARATIF ===== -->
-    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 mb-6 overflow-x-auto">
-      <h2 class="text-lg font-semibold text-nuit mb-5">Et si vous amélioriez votre taux de signature ?</h2>
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 mb-4 overflow-x-auto">
+      <h2 class="text-lg font-semibold text-nuit mb-5">Découvrez le chiffre d'affaires que vous récupérez avec un système de relance :</h2>
 
       <table class="w-full text-sm min-w-[480px]">
         <thead>
           <tr class="border-b border-slate-200">
             <th class="text-left text-slate-500 font-medium pb-3 pr-4">Scénario</th>
             <th class="text-right text-slate-500 font-medium pb-3 px-4">Taux</th>
-            <th class="text-right text-slate-500 font-medium pb-3 px-4">CA dormant / an</th>
+            <th class="text-right text-slate-500 font-medium pb-3 px-4">CA non réalisé / an</th>
             <th class="text-right text-slate-500 font-medium pb-3 pl-4">Gain vs actuel</th>
           </tr>
         </thead>
@@ -149,23 +159,33 @@
       </table>
     </section>
 
+    <!-- ===== TEXTE SOUS LE TABLEAU ===== -->
+    <section class="mb-6 px-1">
+      <p class="text-slate-700 text-base leading-relaxed font-medium">
+        Avec notre outil de relance personnalisé, nous visons un <span class="font-bold text-nuit">gain minimum de 10 %</span> sur votre taux de transformation — ce qui représente <span id="gainMinimum" class="font-semibold text-emerald-600 resultat-animate">— €</span> de CA récupéré pour votre entreprise.
+      </p>
+      <p class="text-nuit text-base leading-relaxed font-bold mt-3">
+        Sans changement d'outil. Sans dépenses publicitaires. Uniquement un système de relance.
+      </p>
+    </section>
+
     <!-- ===== EXPLICATION PÉDAGOGIQUE ===== -->
     <section class="bg-blue-50 border border-blue-100 rounded-2xl p-5 mb-8 text-sm text-slate-600">
-      <p class="font-medium text-nuit mb-1">Comment est calculé le CA dormant ?</p>
+      <p class="font-medium text-nuit mb-1">Comment est calculé le CA non réalisé ?</p>
       <p>
         <span class="font-mono bg-white border border-slate-200 rounded px-1.5 py-0.5 text-xs text-nuit">
-          CA dormant mensuel = devis × valeur × (1 − taux de signature)
+          CA non réalisé = devis × valeur × (1 − taux de transformation)
         </span>
       </p>
       <p class="mt-2">
-        C'est le chiffre d'affaires que vous avez <strong>prospecté, chiffré et présenté</strong>, mais qui n'est pas encore transformé en contrat. Un suivi structuré permet d'en récupérer une partie significative.
+        C'est le chiffre d'affaires que vous avez <strong>prospecté, chiffré et présenté</strong>, mais qui n'est pas encore transformé en contrat.
       </p>
     </section>
 
     <!-- ===== CTA ===== -->
     <section class="text-center">
-      <p class="text-nuit text-sm mb-4">
-        Vous voulez un plan d'action concret pour récupérer ce CA dormant ?
+      <p class="text-nuit text-base font-medium mb-4">
+        Vous voulez un plan d'action concret pour récupérer ce chiffre d'affaires ?
       </p>
       <a
         id="ctaDiagnostic"
@@ -176,7 +196,7 @@
       >
         Réserver mon diagnostic gratuit →
       </a>
-      <p class="text-xs text-slate-400 mt-3">30 min · 100% gratuit · sans engagement</p>
+      <p class="text-xs text-nuit mt-3">20 min · 100% gratuit · sans engagement</p>
     </section>
 
     <!-- Footer minimaliste -->
@@ -204,6 +224,7 @@
 
     const affichageCaAnnuel   = document.getElementById('caDormantAnnuel');
     const affichageCaMensuel  = document.getElementById('caDormantMensuel');
+    const affichageGainMin    = document.getElementById('gainMinimum');
     const corpsTableau        = document.getElementById('tableauScenarios');
 
     /* -------------------------------------------------------
@@ -226,7 +247,7 @@
     }
 
     /* -------------------------------------------------------
-       Calcul du CA dormant pour un taux de signature donné
+       Calcul du CA dormant pour un taux de transformation donné
     ------------------------------------------------------- */
     function calculerCaDormant(nbDevis, valeurDevis, tauxSignature) {
       const caTotalMensuel  = nbDevis * valeurDevis;
@@ -289,6 +310,7 @@
       if (!inputs) {
         affichageCaAnnuel.textContent  = '— €';
         affichageCaMensuel.textContent = '— €';
+        affichageGainMin.textContent   = '— €';
         corpsTableau.innerHTML = '';
         return;
       }
@@ -301,6 +323,11 @@
       /* Affichage du résultat principal */
       affichageCaAnnuel.textContent  = formaterEuros(actuel.caDormantAnnuel);
       affichageCaMensuel.textContent = formaterEuros(actuel.caDormantMensuel);
+
+      /* Gain correspondant au scénario +10 pts de taux */
+      const nouveauTaux10 = Math.min(tauxSignature + 10, 100);
+      const scenario10    = calculerCaDormant(nbDevis, valeurDevis, nouveauTaux10);
+      affichageGainMin.textContent = formaterEuros(actuel.caDormantAnnuel - scenario10.caDormantAnnuel);
 
       /* Reconstruction du tableau */
       corpsTableau.innerHTML = '';
